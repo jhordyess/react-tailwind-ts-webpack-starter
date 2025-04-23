@@ -39,6 +39,6 @@ export default {
       directory: path.resolve('dist')
     },
     watchFiles: path.resolve('src', '**'),
-    port: 3640
+    port: 3000
   }
 }
