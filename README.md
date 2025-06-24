@@ -59,12 +59,12 @@ react-tailwind-ts-webpack-starter/
 ├── eslint.config.js        # ESLint configuration file.
 ├── index.html              # Entry point HTML file.
 ├── package.json            # Project configuration and dependencies.
+├── pnpm-lock.yaml          # pnpm lock file for dependency versions.
 ├── postcss.config.js       # PostCSS configuration file.
 ├── README.md               # Project documentation.
 ├── tsconfig.json           # TypeScript configuration file.
 ├── webpack.config.dev.js   # Webpack configuration for development.
 ├── webpack.config.prod.js  # Webpack configuration for production.
-├── pnpm-lock.yaml          # pnpm lock file for dependency versions.
 ├── .husky/                 # Directory for Git hooks managed by Husky.
 │   ├── pre-push            # Pre-push hook to run linting and TypeScript checks.
 ├── src/
