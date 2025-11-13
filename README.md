@@ -16,10 +16,10 @@ This is a starter project for building a web application using React with TypeSc
 ## Prerequisites
 
 1. Install [Node.js](https://nodejs.org/en/download) (LTS version recommended).
-2. Enable Corepack to use a stable version of pnpm:
+2. Install [pnpm](https://pnpm.io/installation) globally:
 
 ```sh
-corepack enable pnpm
+npm install -g pnpm@latest-10
 ```
 
 ## Getting Started
@@ -63,8 +63,7 @@ react-tailwind-ts-webpack-starter/
 ├── postcss.config.js       # PostCSS configuration file.
 ├── README.md               # Project documentation.
 ├── tsconfig.json           # TypeScript configuration file.
-├── webpack.config.dev.js   # Webpack configuration for development.
-├── webpack.config.prod.js  # Webpack configuration for production.
+├── webpack.config.js       # Webpack configuration file.
 ├── .husky/                 # Directory for Git hooks managed by Husky.
 │   ├── pre-push            # Pre-push hook to run linting and TypeScript checks.
 ├── src/
