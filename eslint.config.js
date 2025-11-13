@@ -3,21 +3,20 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 import pluginReact from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
-import { defineConfig } from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  { ignores: ['node_modules', 'dist'] },
+  globalIgnores(['dist']),
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: globals.browser }
-  },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  reactHooks.configs.flat['recommended-latest'],
-  /* Custom Rules for eslint-plugin-react */
-  {
+    files: ['src/**/*.{ts,mts,cts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      pluginReact.configs.flat.recommended,
+      reactHooks.configs.flat['recommended-latest']
+    ],
+    languageOptions: { globals: globals.browser },
+    /* Custom Rules for eslint-plugin-react */
     rules: {
       'react/react-in-jsx-scope': 'off'
     },
@@ -26,5 +25,11 @@ export default defineConfig([
         version: 'detect'
       }
     }
+  },
+  {
+    // Enable eslint for all other JS files (e.g. config files)
+    files: ['**/*.{js,cjs,mjs}'],
+    extends: [js.configs.recommended],
+    languageOptions: { globals: globals.node }
   }
 ])
