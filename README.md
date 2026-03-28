@@ -50,6 +50,19 @@ pnpm dev
 
 5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see your project.
 
+## Automatic Lifecycle Scripts
+
+This template includes two useful npm lifecycle scripts configured in `package.json`.
+
+- `prepare`: Runs after install and initializes Husky, so Git hooks (like `pre-push`) are ready automatically.
+- `postinstall`: Runs after install and executes `pnpm audit --audit-level moderate` to check for known vulnerabilities in dependencies.
+
+What this means:
+
+1. When you run `pnpm i`, Husky setup is done for you.
+2. A security check is also executed automatically after dependencies are installed.
+3. If vulnerabilities are found, review and update the affected packages before continuing.
+
 ## Project Structure
 
 ```md
